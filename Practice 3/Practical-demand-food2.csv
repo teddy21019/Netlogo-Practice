@@ -1,0 +1,623 @@
+RUN NAME, food2
+INPUTS  
+Number of runs , 30
+  
+Base Price , 1
+Change in price % , 10
+Min demand cut-off , 0
+  
+Initial % Bottom Quintile Consuming , 100
+Initial % Lower Quintile Consuming , 100
+Initial % Middle Quintile Consuming , 100
+Initial % Upper Quintile Consuming , 100
+Initial % Top Quintile Consuming , 100
+  
+Mean Bottom Quintile Share % , 15
+Mean Lower Quintile Share % , 13
+Mean Middle Quintile Share % , 12
+Mean Upper Quintile Share % , 10
+Mean Top Quintile Share % , 8
+s.d. share %, 0.75
+  
+Mean Bottom Elasticity , 0.6
+Mean Lower Quintile Elasticity , 0.6
+Mean Middle Quintile Elasticity , 0.5
+Mean Upper Quintile Elasticity, 0.4
+Mean Top Quintile Elasticity , 0.3
+s.d elasticity, 0.1
+  
+OUTPUTS   
+Results over 30 runs
+ 
+Mean budget = ,100, sd = ,0 
+Gini: mean = ,0.323, sd = ,0.007
+ 
+% households consuming at base price: mean = ,100, sd = ,0 
+Mean Overall Budget Share At Base Price %: mean = ,10.28, sd = ,0.06 
+Mean expenditure share by quintile %: ,
+Q1, 12.27, sd = ,0.24
+Q2, 14.87, sd = ,0.24
+Q3, 18.84, sd =, 0.31
+Q4, 22.27, sd = ,0.3
+Q5 ,31.75, sd = ,0.62
+ 
+Mean % consuming at base price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd = ,0
+ 
+Mean elasticity = ,-0.48, sd = ,0.15 
+ 
+% households consuming at new price: mean = ,100, sd = ,0 
+% change in demand expenditure: mean = ,-4.41, sd = ,0.04 
+% change in total expenditure: mean = ,5.15, sd = ,0.04 
+ 
+Mean % changes in expenditure by quintile: ,
+Only households consuming at base perice included
+Q1 ,3.4, sd = ,0.08
+Q2, 3.41, sd = ,0.07
+Q3 ,4.49, sd = ,0.07
+Q4 ,5.6, sd = ,0.08
+Q5 ,6.73, sd = ,0.09
+ 
+Mean % consuming at new price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd =, 0
+ 
+Mean Overall Budget Share At New Price %: mean =, 10.81, sd = ,0.06 
+ 
+Mean Tax Share %: ,
+Q1 ,12.07, sd = ,0.24
+Q2 ,14.62, sd = ,0.24
+Q3 ,18.72, sd = ,0.31
+Q4 ,22.36, sd = ,0.3
+Q5 ,32.23, sd = ,0.63
+ 
+Overall ETR % = ,0.983, sd = ,0.006
+ 
+Mean ETR %: 
+Q1 ,1.408, sd = ,0.008
+Q2 ,1.223, sd =, 0.011
+Q3 , 1.141, sd = ,0.007
+Q4 ,0.961, sd = ,0.008
+Q5 ,0.776, sd =, 0.007
+ 
+RUN NAME, food2
+INPUTS  
+Number of runs , 30
+  
+Base Price , 1
+Change in price % , 10
+Min demand cut-off , 0
+  
+Initial % Bottom Quintile Consuming , 100
+Initial % Lower Quintile Consuming , 100
+Initial % Middle Quintile Consuming , 100
+Initial % Upper Quintile Consuming , 100
+Initial % Top Quintile Consuming , 100
+  
+Mean Bottom Quintile Share % , 15
+Mean Lower Quintile Share % , 13
+Mean Middle Quintile Share % , 10
+Mean Upper Quintile Share % , 10
+Mean Top Quintile Share % , 5.5
+s.d. share %, 0.75
+  
+Mean Bottom Elasticity , 0.6
+Mean Lower Quintile Elasticity , 0.6
+Mean Middle Quintile Elasticity , 0.5
+Mean Upper Quintile Elasticity, 0.4
+Mean Top Quintile Elasticity , 0.3
+s.d elasticity, 0.1
+  
+OUTPUTS   
+Results over 30 runs
+ 
+Mean budget = ,100, sd = ,0 
+Gini: mean = ,0.325, sd = ,0.006
+ 
+% households consuming at base price: mean = ,100, sd = ,0 
+Mean Overall Budget Share At Base Price %: mean = ,8.92, sd = ,0.04 
+Mean expenditure share by quintile %: ,
+Q1, 14.16, sd = ,0.22
+Q2, 17.04, sd = ,0.25
+Q3, 18, sd =, 0.25
+Q4, 25.54, sd = ,0.29
+Q5 ,25.26, sd = ,0.52
+ 
+Mean % consuming at base price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd = ,0
+ 
+Mean elasticity = ,-0.48, sd = ,0.15 
+ 
+% households consuming at new price: mean = ,100, sd = ,0 
+% change in demand expenditure: mean = ,-4.55, sd = ,0.03 
+% change in total expenditure: mean = ,5, sd = ,0.04 
+ 
+Mean % changes in expenditure by quintile: ,
+Only households consuming at base perice included
+Q1 ,3.41, sd = ,0.09
+Q2, 3.41, sd = ,0.06
+Q3 ,4.52, sd = ,0.09
+Q4 ,5.6, sd = ,0.08
+Q5 ,6.71, sd = ,0.08
+ 
+Mean % consuming at new price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd =, 0
+ 
+Mean Overall Budget Share At New Price %: mean =, 9.37, sd = ,0.04 
+ 
+Mean Tax Share %: ,
+Q1 ,13.95, sd = ,0.22
+Q2 ,16.78, sd = ,0.25
+Q3 ,17.91, sd = ,0.25
+Q4 ,25.69, sd = ,0.28
+Q5 ,25.66, sd = ,0.52
+ 
+Overall ETR % = ,0.852, sd = ,0.004
+ 
+Mean ETR %: 
+Q1 ,1.41, sd = ,0.006
+Q2 ,1.221, sd =, 0.005
+Q3 , 0.951, sd = ,0.007
+Q4 ,0.959, sd = ,0.004
+Q5 ,0.533, sd =, 0.005
+ 
+RUN NAME, food2
+INPUTS  
+Number of runs , 30
+  
+Base Price , 1
+Change in price % , 10
+Min demand cut-off , 0
+  
+Initial % Bottom Quintile Consuming , 100
+Initial % Lower Quintile Consuming , 100
+Initial % Middle Quintile Consuming , 100
+Initial % Upper Quintile Consuming , 100
+Initial % Top Quintile Consuming , 100
+  
+Mean Bottom Quintile Share % , 15
+Mean Lower Quintile Share % , 13
+Mean Middle Quintile Share % , 12
+Mean Upper Quintile Share % , 10
+Mean Top Quintile Share % , 8
+s.d. share %, 2
+  
+Mean Bottom Elasticity , 0.6
+Mean Lower Quintile Elasticity , 0.6
+Mean Middle Quintile Elasticity , 0.5
+Mean Upper Quintile Elasticity, 0.4
+Mean Top Quintile Elasticity , 0.3
+s.d elasticity, 0.1
+  
+OUTPUTS   
+Results over 30 runs
+ 
+Mean budget = ,100, sd = ,0 
+Gini: mean = ,0.325, sd = ,0.007
+ 
+% households consuming at base price: mean = ,100, sd = ,0 
+Mean Overall Budget Share At Base Price %: mean = ,10.28, sd = ,0.07 
+Mean expenditure share by quintile %: ,
+Q1, 12.28, sd = ,0.24
+Q2, 14.75, sd = ,0.25
+Q3, 18.83, sd =, 0.32
+Q4, 22.27, sd = ,0.37
+Q5 ,31.88, sd = ,0.8
+ 
+Mean % consuming at base price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd = ,0
+ 
+Mean elasticity = ,-0.48, sd = ,0.15 
+ 
+% households consuming at new price: mean = ,100, sd = ,0 
+% change in demand expenditure: mean = ,-4.42, sd = ,0.04 
+% change in total expenditure: mean = ,5.14, sd = ,0.04 
+ 
+Mean % changes in expenditure by quintile: ,
+Only households consuming at base perice included
+Q1 ,3.37, sd = ,0.07
+Q2, 3.39, sd = ,0.08
+Q3 ,4.48, sd = ,0.1
+Q4 ,5.59, sd = ,0.08
+Q5 ,6.7, sd = ,0.07
+ 
+Mean % consuming at new price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd =, 0
+ 
+Mean Overall Budget Share At New Price %: mean =, 10.8, sd = ,0.08 
+ 
+Mean Tax Share %: ,
+Q1 ,12.07, sd = ,0.24
+Q2 ,14.5, sd = ,0.24
+Q3 ,18.71, sd = ,0.32
+Q4 ,22.36, sd = ,0.38
+Q5 ,32.35, sd = ,0.81
+ 
+Overall ETR % = ,0.982, sd = ,0.007
+ 
+Mean ETR %: 
+Q1 ,1.411, sd = ,0.013
+Q2 ,1.22, sd =, 0.01
+Q3 , 1.14, sd = ,0.012
+Q4 ,0.957, sd = ,0.012
+Q5 ,0.778, sd =, 0.014
+ 
+RUN NAME, food2
+INPUTS  
+Number of runs , 30
+  
+Base Price , 1
+Change in price % , 10
+Min demand cut-off , 0
+  
+Initial % Bottom Quintile Consuming , 100
+Initial % Lower Quintile Consuming , 100
+Initial % Middle Quintile Consuming , 100
+Initial % Upper Quintile Consuming , 100
+Initial % Top Quintile Consuming , 100
+  
+Mean Bottom Quintile Share % , 15
+Mean Lower Quintile Share % , 13
+Mean Middle Quintile Share % , 12
+Mean Upper Quintile Share % , 10
+Mean Top Quintile Share % , 8
+s.d. share %, 2
+  
+Mean Bottom Elasticity , 0.6
+Mean Lower Quintile Elasticity , 0.6
+Mean Middle Quintile Elasticity , 0.5
+Mean Upper Quintile Elasticity, 0.4
+Mean Top Quintile Elasticity , 0.3
+s.d elasticity, 0.1
+  
+OUTPUTS   
+Results over 30 runs
+ 
+Mean budget = ,100, sd = ,0 
+Gini: mean = ,0.325, sd = ,0.007
+ 
+% households consuming at base price: mean = ,100, sd = ,0 
+Mean Overall Budget Share At Base Price %: mean = ,10.28, sd = ,0.09 
+Mean expenditure share by quintile %: ,
+Q1, 12.27, sd = ,0.28
+Q2, 14.76, sd = ,0.26
+Q3, 18.74, sd =, 0.34
+Q4, 22.3, sd = ,0.36
+Q5 ,31.93, sd = ,0.66
+ 
+Mean % consuming at base price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd = ,0
+ 
+Mean elasticity = ,-0.48, sd = ,0.15 
+ 
+% households consuming at new price: mean = ,100, sd = ,0 
+% change in demand expenditure: mean = ,-4.4, sd = ,0.04 
+% change in total expenditure: mean = ,5.16, sd = ,0.04 
+ 
+Mean % changes in expenditure by quintile: ,
+Only households consuming at base perice included
+Q1 ,3.38, sd = ,0.09
+Q2, 3.42, sd = ,0.08
+Q3 ,4.49, sd = ,0.05
+Q4 ,5.58, sd = ,0.09
+Q5 ,6.73, sd = ,0.06
+ 
+Mean % consuming at new price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd =, 0
+ 
+Mean Overall Budget Share At New Price %: mean =, 10.81, sd = ,0.09 
+ 
+Mean Tax Share %: ,
+Q1 ,12.07, sd = ,0.27
+Q2 ,14.51, sd = ,0.26
+Q3 ,18.62, sd = ,0.34
+Q4 ,22.39, sd = ,0.36
+Q5 ,32.41, sd = ,0.66
+ 
+Overall ETR % = ,0.982, sd = ,0.008
+ 
+Mean ETR %: 
+Q1 ,1.41, sd = ,0.016
+Q2 ,1.22, sd =, 0.012
+Q3 , 1.137, sd = ,0.017
+Q4 ,0.958, sd = ,0.013
+Q5 ,0.778, sd =, 0.013
+ 
+RUN NAME, food2
+INPUTS  
+Number of runs , 30
+  
+Base Price , 1
+Change in price % , 10
+Min demand cut-off , 0
+  
+Initial % Bottom Quintile Consuming , 100
+Initial % Lower Quintile Consuming , 100
+Initial % Middle Quintile Consuming , 100
+Initial % Upper Quintile Consuming , 100
+Initial % Top Quintile Consuming , 100
+  
+Mean Bottom Quintile Share % , 15
+Mean Lower Quintile Share % , 13
+Mean Middle Quintile Share % , 12
+Mean Upper Quintile Share % , 10
+Mean Top Quintile Share % , 8
+s.d. share %, 2
+  
+Mean Bottom Elasticity , 0.6
+Mean Lower Quintile Elasticity , 0.6
+Mean Middle Quintile Elasticity , 0.5
+Mean Upper Quintile Elasticity, 0.4
+Mean Top Quintile Elasticity , 0.3
+s.d elasticity, 0.1
+  
+OUTPUTS   
+Results over 30 runs
+ 
+Mean budget = ,100, sd = ,0 
+Gini: mean = ,0.324, sd = ,0.007
+ 
+% households consuming at base price: mean = ,100, sd = ,0 
+Mean Overall Budget Share At Base Price %: mean = ,10.28, sd = ,0.08 
+Mean expenditure share by quintile %: ,
+Q1, 12.3, sd = ,0.26
+Q2, 14.79, sd = ,0.27
+Q3, 18.8, sd =, 0.35
+Q4, 22.28, sd = ,0.38
+Q5 ,31.83, sd = ,0.65
+ 
+Mean % consuming at base price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd = ,0
+ 
+Mean elasticity = ,-0.48, sd = ,0.15 
+ 
+% households consuming at new price: mean = ,100, sd = ,0 
+% change in demand expenditure: mean = ,-4.41, sd = ,0.04 
+% change in total expenditure: mean = ,5.15, sd = ,0.04 
+ 
+Mean % changes in expenditure by quintile: ,
+Only households consuming at base perice included
+Q1 ,3.39, sd = ,0.08
+Q2, 3.41, sd = ,0.09
+Q3 ,4.5, sd = ,0.06
+Q4 ,5.6, sd = ,0.09
+Q5 ,6.72, sd = ,0.07
+ 
+Mean % consuming at new price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd =, 0
+ 
+Mean Overall Budget Share At New Price %: mean =, 10.81, sd = ,0.08 
+ 
+Mean Tax Share %: ,
+Q1 ,12.09, sd = ,0.25
+Q2 ,14.55, sd = ,0.27
+Q3 ,18.68, sd = ,0.35
+Q4 ,22.38, sd = ,0.38
+Q5 ,32.31, sd = ,0.66
+ 
+Overall ETR % = ,0.983, sd = ,0.008
+ 
+Mean ETR %: 
+Q1 ,1.409, sd = ,0.014
+Q2 ,1.22, sd =, 0.011
+Q3 , 1.138, sd = ,0.015
+Q4 ,0.957, sd = ,0.012
+Q5 ,0.779, sd =, 0.012
+ 
+RUN NAME, food2
+INPUTS  
+Number of runs , 30
+  
+Base Price , 1
+Change in price % , 10
+Min demand cut-off , 0
+  
+Initial % Bottom Quintile Consuming , 100
+Initial % Lower Quintile Consuming , 100
+Initial % Middle Quintile Consuming , 100
+Initial % Upper Quintile Consuming , 100
+Initial % Top Quintile Consuming , 100
+  
+Mean Bottom Quintile Share % , 15
+Mean Lower Quintile Share % , 13
+Mean Middle Quintile Share % , 12
+Mean Upper Quintile Share % , 10
+Mean Top Quintile Share % , 8
+s.d. share %, 2
+  
+Mean Bottom Elasticity , 0.6
+Mean Lower Quintile Elasticity , 0.6
+Mean Middle Quintile Elasticity , 0.5
+Mean Upper Quintile Elasticity, 0.4
+Mean Top Quintile Elasticity , 0.3
+s.d elasticity, 0.1
+  
+OUTPUTS   
+Results over 30 runs
+ 
+Mean budget = ,100, sd = ,0 
+Gini: mean = ,0.325, sd = ,0.007
+ 
+% households consuming at base price: mean = ,100, sd = ,0 
+Mean Overall Budget Share At Base Price %: mean = ,10.26, sd = ,0.08 
+Mean expenditure share by quintile %: ,
+Q1, 12.27, sd = ,0.25
+Q2, 14.78, sd = ,0.37
+Q3, 18.76, sd =, 0.37
+Q4, 22.21, sd = ,0.34
+Q5 ,31.98, sd = ,0.7
+ 
+Mean % consuming at base price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd = ,0
+ 
+Mean elasticity = ,-0.48, sd = ,0.15 
+ 
+% households consuming at new price: mean = ,100, sd = ,0 
+% change in demand expenditure: mean = ,-4.41, sd = ,0.04 
+% change in total expenditure: mean = ,5.15, sd = ,0.04 
+ 
+Mean % changes in expenditure by quintile: ,
+Only households consuming at base perice included
+Q1 ,3.41, sd = ,0.08
+Q2, 3.42, sd = ,0.09
+Q3 ,4.51, sd = ,0.08
+Q4 ,5.59, sd = ,0.08
+Q5 ,6.68, sd = ,0.07
+ 
+Mean % consuming at new price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd =, 0
+ 
+Mean Overall Budget Share At New Price %: mean =, 10.79, sd = ,0.08 
+ 
+Mean Tax Share %: ,
+Q1 ,12.07, sd = ,0.24
+Q2 ,14.53, sd = ,0.36
+Q3 ,18.65, sd = ,0.37
+Q4 ,22.3, sd = ,0.33
+Q5 ,32.45, sd = ,0.7
+ 
+Overall ETR % = ,0.981, sd = ,0.008
+ 
+Mean ETR %: 
+Q1 ,1.409, sd = ,0.009
+Q2 ,1.223, sd =, 0.017
+Q3 , 1.139, sd = ,0.015
+Q4 ,0.953, sd = ,0.012
+Q5 ,0.777, sd =, 0.016
+ 
+RUN NAME, food2
+INPUTS  
+Number of runs , 30
+  
+Base Price , 1
+Change in price % , 10
+Min demand cut-off , 0
+  
+Initial % Bottom Quintile Consuming , 100
+Initial % Lower Quintile Consuming , 100
+Initial % Middle Quintile Consuming , 100
+Initial % Upper Quintile Consuming , 100
+Initial % Top Quintile Consuming , 100
+  
+Mean Bottom Quintile Share % , 15
+Mean Lower Quintile Share % , 13
+Mean Middle Quintile Share % , 12
+Mean Upper Quintile Share % , 10
+Mean Top Quintile Share % , 8
+s.d. share %, 2
+  
+Mean Bottom Elasticity , 0.6
+Mean Lower Quintile Elasticity , 0.6
+Mean Middle Quintile Elasticity , 0.5
+Mean Upper Quintile Elasticity, 0.4
+Mean Top Quintile Elasticity , 0.3
+s.d elasticity, 0.1
+  
+OUTPUTS   
+Results over 30 runs
+ 
+Mean budget = ,100, sd = ,0 
+Gini: mean = ,0.325, sd = ,0.006
+ 
+% households consuming at base price: mean = ,100, sd = ,0 
+Mean Overall Budget Share At Base Price %: mean = ,10.27, sd = ,0.08 
+Mean expenditure share by quintile %: ,
+Q1, 12.25, sd = ,0.22
+Q2, 14.74, sd = ,0.31
+Q3, 18.81, sd =, 0.34
+Q4, 22.31, sd = ,0.45
+Q5 ,31.89, sd = ,0.69
+ 
+Mean % consuming at base price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd = ,0
+ 
+Mean elasticity = ,-0.48, sd = ,0.15 
+ 
+% households consuming at new price: mean = ,100, sd = ,0 
+% change in demand expenditure: mean = ,-4.41, sd = ,0.03 
+% change in total expenditure: mean = ,5.15, sd = ,0.04 
+ 
+Mean % changes in expenditure by quintile: ,
+Only households consuming at base perice included
+Q1 ,3.4, sd = ,0.08
+Q2, 3.41, sd = ,0.09
+Q3 ,4.52, sd = ,0.08
+Q4 ,5.59, sd = ,0.07
+Q5 ,6.69, sd = ,0.07
+ 
+Mean % consuming at new price by quintile: ,
+Q1 ,100, sd = ,0
+Q2 ,100, sd = ,0
+Q3 ,100, sd = ,0
+Q4 ,100, sd = ,0
+Q5 ,100, sd =, 0
+ 
+Mean Overall Budget Share At New Price %: mean =, 10.8, sd = ,0.08 
+ 
+Mean Tax Share %: ,
+Q1 ,12.04, sd = ,0.22
+Q2 ,14.49, sd = ,0.31
+Q3 ,18.7, sd = ,0.34
+Q4 ,22.41, sd = ,0.45
+Q5 ,32.36, sd = ,0.69
+ 
+Overall ETR % = ,0.981, sd = ,0.007
+ 
+Mean ETR %: 
+Q1 ,1.411, sd = ,0.011
+Q2 ,1.222, sd =, 0.014
+Q3 , 1.141, sd = ,0.015
+Q4 ,0.956, sd = ,0.013
+Q5 ,0.776, sd =, 0.015
+ 
