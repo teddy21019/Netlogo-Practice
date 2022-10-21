@@ -1,0 +1,17 @@
+Guildford
+%EmpsLeavingJob 1
+maxWageIncrease% 10
+maxWageReduction% 10
+  
+Results over 200 quarters (ignoring first 100) and 2 runs
+  
+Mean wage: 99.32 (sd 1.71 )
+Vacancy rate %: mean: 2.33 (sd 0.14 )
+Unemployment rate %: mean: 2.33 (sd 0.14 )
+Unemployment rate %: range: 2.25 (sd 0.07 )
+Long-term unemployed %: mean: 12.37 (sd 0.3 )
+Hazard  Rates  
+  E to U %: mean: 1.31 (sd 0 )
+  U to E %: mean: 35.36 (sd 2.08 )
+  E to I %: mean: 2.68 (sd 0 )
+  U to I %: mean: 15.45 (sd 0.1 )
