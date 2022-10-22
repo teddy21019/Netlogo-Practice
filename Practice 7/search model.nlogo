@@ -191,8 +191,6 @@ to go
   worker-leaving-market
   new-worker-enter
   search
-
-
   ask workers with [employed = False] [wander]
   tick
 end
@@ -204,7 +202,7 @@ to firm-closing
   [
     set dead_firm_size_list lput firm_size dead_firm_size_list
     foreach list_of_workers
-    [ w ->
+    [ w -> ; w = worker
       ask w
       [
         set employed False
@@ -212,7 +210,7 @@ to firm-closing
         set color red
       ]
     ]
-    die
+    die ; employer dies
   ]
 
   foreach dead_firm_size_list
@@ -258,26 +256,27 @@ to worker-leaving-boss-procedure
 end
 
 to worker-leaving-market
-  let leaved 0
+  ; Some probablity that a worker, employed or unemployed, leave the market
+  ; doesn't assume return to market, hence directly die.
+
   ask workers with [employed = True]
   [
     if random-float 1 < employed-leaving-prob
     [
       worker-leaving-boss-procedure
-      set leaved ( leaved + 1 )
     ]
   ]
 
   ask workers with [employed = False]
   [
     if random-float 1 < unemployed-leaving-prob [ die ]
-    set leaved ( leaved + 1 )
   ]
 
 
 end
 
 to new-worker-enter
+  ; run in go. Check if needs new worker in
   let n_new_workers ( n-workers - count workers )
 
   if n_new_workers > 0
@@ -296,11 +295,53 @@ to wander
 end
 
 to search
+  if poisson-process = True
+  [
+    search-poisson
+  ]
+
+  if poisson-process = False
+  [
+    search-from-highest-vacancy
+  ]
+end
+
+to search-poisson
+  ask workers with [employed = False]
+  [
+    let potential-boss one-of employers in-radius 50
+    if potential-boss != nobody
+    [
+      foreach reverse sort [list_of_vacancies] of potential-boss
+      [vacancy-wage ->
+        if vacancy-wage < wage_upper_bound and vacancy-wage > wage_lower_bound
+        [
+          set boss potential-boss
+          set wage vacancy-wage
+          set employed True
+          set color white
+          locate-worker
+          boss-employ-worker-procedure
+        ]
+      ]
+    ]
+
+  ]
+end
+
+to search-from-highest-vacancy
 
 end
 
-
-
+to boss-employ-worker-procedure
+  ask boss
+    [
+      set list_of_workers lput myself list_of_workers ; remove from list of workers
+      let position_of_wage position [wage] of myself list_of_vacancies ; get the index of its current wage in companies wage list
+      set list_of_vacancies remove-item position_of_wage list_of_vacancies ; remove it
+      set list_of_wages lput [wage] of myself list_of_wages ; add this wage to the vacancy list
+  ]
+end
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
@@ -420,7 +461,7 @@ wage-upper-%
 wage-upper-%
 0
 100
-50.0
+0.0
 1
 1
 NIL
@@ -435,7 +476,7 @@ wage-lower-%
 wage-lower-%
 0
 100
-50.0
+31.0
 1
 1
 NIL
@@ -450,7 +491,7 @@ mean-expected-wage
 mean-expected-wage
 0
 1e5
-40000.0
+25000.0
 5000
 1
 NIL
@@ -500,7 +541,7 @@ employed-leaving-prob
 employed-leaving-prob
 0
 1
-0.02
+0.0
 0.01
 1
 NIL
@@ -531,6 +572,17 @@ count workers
 17
 1
 11
+
+SWITCH
+21
+466
+184
+499
+poisson-process
+poisson-process
+0
+1
+-1000
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -874,7 +926,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.2.2
+NetLogo 6.0.2
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
