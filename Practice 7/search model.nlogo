@@ -5,6 +5,7 @@ globals [
   sizes
   n_employer_by_size
   wages
+  n_meet
 ]
 
 breed [employers employer]
@@ -307,11 +308,13 @@ to search
 end
 
 to search-poisson
+  set n_meet 0
   ask workers with [employed = False]
   [
     let potential-boss one-of employers in-radius 50
     if potential-boss != nobody
     [
+     set n_meet ( n_meet + 1 )
       foreach reverse sort [list_of_vacancies] of potential-boss
       [vacancy-wage ->
         if vacancy-wage < wage_upper_bound and vacancy-wage > wage_lower_bound
@@ -565,11 +568,11 @@ HORIZONTAL
 MONITOR
 833
 461
-913
+969
 506
 NIL
-count workers
-17
+n_meet / n-workers
+3
 1
 11
 
