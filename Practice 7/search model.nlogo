@@ -17,6 +17,7 @@ employers-own
   list_of_workers
   list_of_wages       ; wage for already hired
   list_of_vacancies   ; wage ready to offer
+  unemployed_neighbor
 ]
 
 workers-own
@@ -193,6 +194,7 @@ to go
   new-worker-enter
   search
   ask workers with [employed = False] [wander]
+  ask workers [recalculate-acceptance-boundary]
   tick
 end
 
@@ -290,7 +292,8 @@ to new-worker-enter
 end
 
 to wander
-  face one-of employers with [firm_size > 50]
+  ;face one-of employers with [firm_size > 50]
+  rt random 360
   forward 1
 
 end
@@ -309,28 +312,99 @@ end
 
 to search-poisson
   set n_meet 0
-  ask workers with [employed = False]
-  [
-    let potential-boss one-of employers in-radius 50
-    if potential-boss != nobody
-    [
-     set n_meet ( n_meet + 1 )
-      foreach reverse sort [list_of_vacancies] of potential-boss
-      [vacancy-wage ->
-        if vacancy-wage < wage_upper_bound and vacancy-wage > wage_lower_bound
-        [
-          set boss potential-boss
-          set wage vacancy-wage
-          set employed True
-          set color white
-          locate-worker
-          boss-employ-worker-procedure
-        ]
-      ]
-    ]
 
+
+  ask employers with [length list_of_vacancies > 0]
+  [
+    ; rank their vacancy lwage
+    set list_of_vacancies reverse sort list_of_vacancies
+    let temp_list_of_offers list_of_vacancies
+
+    ; sort the workers in radius 5 by their wage. Workers with highest wage that met the vacancy wage are directly hired
+    let unemployed_around sort-by [ [w1 w2] -> [target_wage] of w1 > [target_wage] of w2 ] workers with [employed = False] in-radius 5
+
+
+    foreach unemployed_around
+    [ current_unemployed_worker ->
+      ; iterate over the workers.
+      ; adjust vacancy list along with workers
+      let current_offer_index 0
+      let keep_finding_offer ifelse-value (length temp_list_of_offers != 0) [True][False]
+      ;show (word "-- Current worker: " [who] of current_unemployed_worker ", " [wage_upper_bound] of current_unemployed_worker ", " [wage_lower_bound] of current_unemployed_worker)
+
+      while [keep_finding_offer = True]
+      [
+        ;show word "---- List of vacancies in search : " temp_list_of_offers
+        let current_offer item current_offer_index temp_list_of_offers
+        ;show word "current offer: " current_offer
+        ; if current_off higher that highest bound for this better worker, drop this wage in this search, and stop for all workers
+        ifelse current_offer > [wage_upper_bound] of current_unemployed_worker
+        [
+          set temp_list_of_offers remove current_offer temp_list_of_offers
+          ; the next offer will still be the first element of list
+          ; therefore current index remains 0
+
+        ]
+        [
+          ifelse offer-ok current_unemployed_worker current_offer = True
+          [
+            ; take the offer
+            ;show word "employed" [who] of current_unemployed_worker
+            ask current_unemployed_worker
+            [
+              set boss myself
+              set wage current_offer
+              set employed True
+              set color white
+              locate-worker
+              boss-employ-worker-procedure
+            ]
+
+            set temp_list_of_offers remove current_offer temp_list_of_offers
+            set keep_finding_offer False
+
+            ; because the rest worker wants less wage, the
+          ]
+          [ ; else not ok offer
+            ; check the next offer
+            set current_offer_index ( current_offer_index + 1 )
+            if current_offer < [wage_lower_bound] of current_unemployed_worker [set keep_finding_offer False] ; if the rest are even lower, stop for this worker
+          ]
+        ]; end ifelse high wage too high
+        if current_offer_index >= length temp_list_of_offers [set keep_finding_offer False] ; if no more to search, stop for this worker
+      ]
+
+    ]; end foreach unemployed arounf
   ]
+
+
+
+;  ask workers with [employed = False]
+;  [
+;    let potential-boss one-of employers in-radius 50
+;    if potential-boss != nobody
+;    [
+;     set n_meet ( n_meet + 1 )
+;      foreach reverse sort [list_of_vacancies] of potential-boss
+;      [vacancy-wage ->
+;        if vacancy-wage < wage_upper_bound and vacancy-wage > wage_lower_bound
+;        [
+;          set boss potential-boss
+;          set wage vacancy-wage
+;          set employed True
+;          set color white
+;          locate-worker
+;          boss-employ-worker-procedure
+;        ]
+;      ]
+;    ]
+;  ]
 end
+
+to-report offer-ok [w offer]
+  report ( [wage_upper_bound] of w > offer and [wage_lower_bound] of w < offer )
+end
+
 
 to search-from-highest-vacancy
 
@@ -339,11 +413,18 @@ end
 to boss-employ-worker-procedure
   ask boss
     [
+      ;show word "List of vacancy: " list_of_vacancies
+      ;show word "wage: " [wage] of myself
       set list_of_workers lput myself list_of_workers ; remove from list of workers
       let position_of_wage position [wage] of myself list_of_vacancies ; get the index of its current wage in companies wage list
       set list_of_vacancies remove-item position_of_wage list_of_vacancies ; remove it
       set list_of_wages lput [wage] of myself list_of_wages ; add this wage to the vacancy list
   ]
+end
+
+to recalculate-acceptance-boundary
+  set wage_upper_bound target_wage * ( 1 + wage-upper-% / 100 )
+  set wage_lower_bound target_wage * ( 1 - wage-lower-% / 100 )
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
@@ -464,7 +545,7 @@ wage-upper-%
 wage-upper-%
 0
 100
-0.0
+11.0
 1
 1
 NIL
@@ -479,7 +560,7 @@ wage-lower-%
 wage-lower-%
 0
 100
-31.0
+0.0
 1
 1
 NIL
@@ -494,7 +575,7 @@ mean-expected-wage
 mean-expected-wage
 0
 1e5
-25000.0
+50000.0
 5000
 1
 NIL
@@ -559,7 +640,7 @@ unemployed-leaving-prob
 unemployed-leaving-prob
 0
 1
-0.02
+0.1
 0.01
 1
 NIL
