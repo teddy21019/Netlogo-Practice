@@ -1,3 +1,4 @@
+extensions [py]
 ; Create Log normal distribution
 
 globals [
@@ -39,13 +40,18 @@ workers-own
 ;========================================
 
 to setup
-
+  import-python
   random-seed 2
   setup-world
   setup-employers
   setup-workers
   initialize-employment
   aggregate-wage
+end
+
+to import-python
+  py:setup py:python
+  py:run "import util"
 end
 
 to setup-world
@@ -61,6 +67,9 @@ to setup-employers
     new-employer-setting 0
   ]
   allocate-firm-size
+  set-current-plot "Firm size"
+  set-current-plot-pen "pen-0"
+  histogram [firm_size] of employers
 end
 
 to new-employer-setting [fs]
@@ -77,10 +86,14 @@ end
 
 to allocate-firm-size
 
-  set sizes [1 2 15 30 50 97 100]
+  set sizes read-from-string(firm_size_list)
+  let ratio ( n-workers / n-employers )
+  py:set "sizes" sizes
+  py:set "ratio" ratio
+  let alpha py:runresult "util.get_inverse_ratio(sizes, ratio)"
 
   ; the mapping parameter must be obtained via nuerical method
-  set n_employer_by_size map [i -> (1 / (i ^ 0.6685) )] sizes
+  set n_employer_by_size map [i -> (1 / (i ^ alpha) )] sizes
   let current_sum sum n_employer_by_size
   ;normalize to 100
   set n_employer_by_size map floor ( map [i -> i * n-employers / current_sum] n_employer_by_size )
@@ -507,10 +520,10 @@ PENS
 "pen-0" 2000.0 1 -7500403 true "" "histogram wages"
 
 SLIDER
-19
-131
-191
-164
+18
+135
+190
+168
 n-employers
 n-employers
 0
@@ -522,10 +535,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-17
-178
-189
-211
+20
+177
+192
+210
 n-workers
 n-workers
 0
@@ -537,10 +550,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-17
-226
-189
-259
+18
+291
+190
+324
 wage-upper-%
 wage-upper-%
 0
@@ -552,25 +565,25 @@ NIL
 HORIZONTAL
 
 SLIDER
-18
-276
-190
-309
+19
+341
+191
+374
 wage-lower-%
 wage-lower-%
 0
 100
-0.0
+10.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-18
-325
-190
-358
+19
+390
+191
+423
 mean-expected-wage
 mean-expected-wage
 0
@@ -617,30 +630,30 @@ NIL
 1
 
 SLIDER
-19
-375
-196
-408
+20
+440
+197
+473
 employed-leaving-prob
 employed-leaving-prob
 0
 1
-0.0
+0.05
 0.01
 1
 NIL
 HORIZONTAL
 
 SLIDER
-18
-420
-197
-453
+19
+485
+198
+518
 unemployed-leaving-prob
 unemployed-leaving-prob
 0
 1
-0.1
+0.07
 0.01
 1
 NIL
@@ -658,15 +671,43 @@ n_meet / n-workers
 11
 
 SWITCH
-21
-466
-184
-499
+22
+531
+185
+564
 poisson-process
 poisson-process
 0
 1
 -1000
+
+PLOT
+1047
+301
+1247
+451
+Firm size
+NIL
+NIL
+0.0
+100.0
+0.0
+10.0
+true
+false
+"" ""
+PENS
+"pen-0" 5.0 1 -7500403 true "" "histogram [firm_size] of employers"
+
+CHOOSER
+19
+226
+191
+271
+firm_size_list
+firm_size_list
+"[1 2 5 10 20 40 50 90 100]" "[40 50 60]"
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -1010,7 +1051,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.0.2
+NetLogo 6.2.2
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
